@@ -1,6 +1,7 @@
 let message = document.querySelector("#message");
 let form = document.querySelector("#message-form");
 let feedback = document.querySelector(".feedback");
+let messageContent = document.querySelector(".message-content");
 
 form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -10,6 +11,7 @@ form.addEventListener("submit", function (event) {
         feedback.classList.remove("show");
     },2000)
   } else{
-    document.querySelector(".message-content").innerHTML = message.value;
+    messageContent.textContent = message.value;
+    message.value = '';
   }
 });
